@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的故事 | chase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f1a',
+                        cardBg: 'rgba(30, 41, 59, 0.6)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0b0f1a; font-family: 'Inter', sans-serif; color: #f1f5f9; }
+        .fixed-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: url('images/bg.jpg') no-repeat center center; background-size: cover; opacity: 0.15;
+        }
+        /* 五色渐变时间轴 */
+        .timeline-line {
+            position: absolute; left: 24px; top: 20px; bottom: 0; width: 2px;
+            background: linear-gradient(to bottom, #f59e0b, #6366f1, #3b82f6, #d946ef, #10b981);
+        }
+    </style>
+</head>
+
+<body class="antialiased min-h-screen relative flex flex-col items-center pb-20">
+
+    <div class="fixed-bg"></div>
+
+    <div class="w-full max-w-3xl px-6 py-16 relative z-10">
+        
+        <a href="index.html" class="inline-flex items-center gap-2 text-slate-500 hover:text-white transition-colors mb-12 group text-sm font-medium">
+            <svg class="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            返回首页
+        </a>
+
+        <div class="mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">从审计师到 AI 操盘手 <span class="text-amber-500">.</span></h1>
+            <p class="text-slate-400 text-lg leading-relaxed border-l-4 border-amber-500/30 pl-6 italic">
+                “我不相信横空出世的天才。我的职业生涯，是一场关于如何在深圳这座‘卷都’里，用系统对抗混乱、用逻辑追求增长的长期实验。”
+            </p>
+        </div>
+
+        <div class="relative pl-14">
+            <div class="timeline-line"></div>
+
+            <div class="relative mb-20 group">
+                <div class="absolute -left-[43px] top-1 w-10 h-10 rounded-full bg-amber-500/10 border-2 border-amber-500 flex items-center justify-center text-amber-500 shadow-[0_0_20px_rgba(245,158,11,0.3)] bg-darkBg z-10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">审计师的逻辑底色</h3>
+                <div class="text-amber-500 text-xs font-bold uppercase tracking-widest mb-4">Origin: The Auditor</div>
+                <div class="bg-slate-900/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 hover:border-amber-500/30 transition-all">
+                    <p class="text-slate-300 leading-relaxed">
+                        在从事财务审计期间，我接受了极为严苛的逻辑训练。每一笔账目的背后都是业务的本质，这让我养成了对<strong>数据极其敏感</strong>、对<strong>流程近乎强迫症般追求标准化</strong>的习惯。这段经历为我后来构建“个人系统”打下了最坚实的底层代码。
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative mb-20 group">
+                <div class="absolute -left-[43px] top-1 w-10 h-10 rounded-full bg-indigo-500/10 border-2 border-indigo-500 flex items-center justify-center text-indigo-500 shadow-[0_0_20px_rgba(99,102,241,0.3)] bg-darkBg z-10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">初入深圳：思维重塑的阵痛</h3>
+                <div class="text-indigo-400 text-xs font-bold uppercase tracking-widest mb-4">Transition: Shenzhen Speed</div>
+                <div class="bg-slate-900/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 hover:border-indigo-500/30 transition-all">
+                    <p class="text-slate-300 leading-relaxed">
+                        当我带着审计师追求“百分百准确”的执念来到深圳，现实给了我当头一棒。互联网不讲究完美，只讲究<strong>“快”与“迭代”</strong>。我被迫在不确定性中重塑思维，学会了像黑客一样思考：先开枪，后瞄准，在奔跑中修正弹道。
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative mb-20 group">
+                <div class="absolute -left-[43px] top-1 w-10 h-10 rounded-full bg-blue-500/10 border-2 border-blue-500 flex items-center justify-center text-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.3)] bg-darkBg z-10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">跨境电商的实战洗礼</h3>
+                <div class="text-blue-500 text-xs font-bold uppercase tracking-widest mb-4">Battle: The Operator</div>
+                <div class="bg-slate-900/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 hover:border-blue-500/30 transition-all">
+                    <p class="text-slate-300 leading-relaxed">
+                        这是真正的战场。我接手了 <strong>1600+ SKU</strong> 的盘子，面对着瞬息万变的流量和库存压力。我成功带领店铺实现了 <strong>26w+ 的月销售额</strong>，但更重要的是，我明白了：爆款或许靠运气，但<strong>持续的盈利</strong>只能靠系统。
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative mb-20 group">
+                <div class="absolute -left-[43px] top-1 w-10 h-10 rounded-full bg-fuchsia-500/10 border-2 border-fuchsia-500 flex items-center justify-center text-fuchsia-500 shadow-[0_0_20px_rgba(217,70,239,0.3)] bg-darkBg z-10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">《深漂日记》里的自我进化</h3>
+                <div class="text-fuchsia-500 text-xs font-bold uppercase tracking-widest mb-4">Reflection: The System</div>
+                <div class="bg-slate-900/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 hover:border-fuchsia-500/30 transition-all">
+                    <p class="text-slate-300 leading-relaxed">
+                        在无数个加班后的深夜，我写下了<strong>《深漂日记》</strong>。这些文字记录的不只是生活的琐碎，更是我对业务逻辑近乎偏执的复盘。我发现，对抗焦虑的唯一武器就是<strong>复盘与内化</strong>。在日记里，我把复杂的业务拆解成了一个个可复用的 SOP 模块，这是我个人系统的雏形。
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <div class="absolute -left-[43px] top-1 w-10 h-10 rounded-full bg-emerald-500/10 border-2 border-emerald-500 flex items-center justify-center text-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.3)] bg-darkBg z-10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">AI 时代的重构与爆发</h3>
+                <div class="text-emerald-500 text-xs font-bold uppercase tracking-widest mb-4">Evolution: AI-First</div>
+                <div class="bg-slate-900/40 backdrop-blur-md border border-white/5 rounded-3xl p-8 hover:border-emerald-500/30 transition-all">
+                    <p class="text-slate-300 leading-relaxed">
+                        当 AI 浪潮来袭，我意识到这不是一个工具，而是一次生产力的重置。我开始尝试将 <strong>ChatGPT、Gemini</strong> 深度接入工作流。在 X (Twitter) 的流量实验中，我验证了“AI + 个人系统”的威力。现在，我不再只是操作者，我是这套智能系统的架构师。
+                    </p>
+                    <div class="mt-6 flex gap-3 text-xs font-bold uppercase tracking-widest text-emerald-500/80">
+                        <span class="bg-emerald-500/10 px-2 py-1 rounded">#AI_First</span>
+                        <span class="bg-emerald-500/10 px-2 py-1 rounded">#System_Thinker</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-24 text-center">
+            <p class="text-slate-500 italic mb-8">“与其预测未来，不如系统化地创造未来。”</p>
+            <a href="connect.html" class="inline-flex items-center gap-3 bg-white text-darkBg px-10 py-4 rounded-full font-bold hover:bg-slate-200 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-white/10">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                和我聊聊 (Let's Connect)
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 MOE | chase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f1a',
+                        cardBg: 'rgba(30, 41, 59, 0.6)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0b0f1a; font-family: 'Inter', sans-serif; color: #f1f5f9; }
+        .fixed-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: url('images/bg.jpg') no-repeat center center; background-size: cover; opacity: 0.2;
+        }
+        /* 卡片悬停光效 */
+        .moe-card:hover { transform: translateY(-5px); }
+    </style>
+</head>
+
+<body class="antialiased min-h-screen flex flex-col items-center relative">
+
+    <div class="fixed-bg"></div>
+
+    <div class="w-full max-w-5xl px-6 py-12 relative z-10">
+        
+        <a href="index.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-10 group text-sm font-medium">
+            <svg class="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            返回首页
+        </a>
+
+        <div class="mb-16 text-center md:text-left">
+            <h1 class="text-4xl font-extrabold text-white mb-4 tracking-tight">我的 MOE 架构 <span class="text-emerald-500">.</span></h1>
+            <p class="text-slate-400 text-lg max-w-2xl">
+                <span class="font-mono text-emerald-400">Mixture of Experts</span> (专家混合模型) 是我的底层工作逻辑。<br>
+                我将不同的业务能力封装为独立的“专家模块”，根据场景动态调用，实现单兵作战的效率最大化。
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="moe-card bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-[2rem] p-8 hover:border-blue-500/50 hover:bg-slate-800/80 transition-all duration-300 group">
+                <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500 mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">流量与选题专家 <span class="text-sm font-normal text-slate-500 block mt-1">Traffic & Content Expert</span></h3>
+                <p class="text-slate-400 leading-relaxed mb-6">
+                    拒绝盲目铺量。基于社媒实时热点与高价值信息差进行精准选题。利用 LLM 模拟不同用户画像，打磨极致的“内容钩子 (Hook)”，实现低成本冷启动与高留存转化。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-bold rounded-full">流量冷启动</span>
+                    <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-bold rounded-full">信息差萃取</span>
+                    <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-bold rounded-full">Hook 设计</span>
+                </div>
+            </div>
+
+            <div class="moe-card bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-[2rem] p-8 hover:border-purple-500/50 hover:bg-slate-800/80 transition-all duration-300 group">
+                <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-500 mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">AI 多模态专家 <span class="text-sm font-normal text-slate-500 block mt-1">LLM & Multimodal Expert</span></h3>
+                <p class="text-slate-400 leading-relaxed mb-6">
+                    深度掌握 <strong>ChatGPT</strong> 与 <strong>Gemini</strong> 等前沿大模型，重构跨境电商生产流。将文案生成、数据分析及多媒体处理的周期从“天”压缩至“分钟级”，实现全链路自动化。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs font-bold rounded-full">ChatGPT</span>
+                    <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs font-bold rounded-full">Gemini</span>
+                    <span class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs font-bold rounded-full">生产力重构</span>
+                </div>
+            </div>
+
+            <div class="moe-card bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-[2rem] p-8 hover:border-emerald-500/50 hover:bg-slate-800/80 transition-all duration-300 group">
+                <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-500 mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">系统化 SOP 专家 <span class="text-sm font-normal text-slate-500 block mt-1">Systems & Workflow Expert</span></h3>
+                <p class="text-slate-400 leading-relaxed mb-6">
+                    拒绝碎片化勤奋。通过自研工具（如智能装箱算法）与 AI Agent，将复杂业务流程封装为标准化 SOP。通过“人机协作”模式，将团队人效提升 300% 以上。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold rounded-full">SOP 资产化</span>
+                    <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold rounded-full">业务逻辑工程化</span>
+                    <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold rounded-full">效率倍增</span>
+                </div>
+            </div>
+
+            <div class="moe-card bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-[2rem] p-8 hover:border-amber-500/50 hover:bg-slate-800/80 transition-all duration-300 group">
+                <div class="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center text-amber-500 mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">商业增长专家 <span class="text-sm font-normal text-slate-500 block mt-1">Growth Hacker Expert</span></h3>
+                <p class="text-slate-400 leading-relaxed mb-6">
+                    从流量运营的系统思维出发，结合 26w+ 店铺操盘实战经验，关注流量到转化的全链路优化。不仅懂 AI 技术，更懂如何将 AI 转化为真实的财务利润 (ROI)。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-amber-500/10 text-amber-400 text-xs font-bold rounded-full">操盘手思维</span>
+                    <span class="px-3 py-1 bg-amber-500/10 text-amber-400 text-xs font-bold rounded-full">ROI 导向</span>
+                    <span class="px-3 py-1 bg-amber-500/10 text-amber-400 text-xs font-bold rounded-full">商业逻辑</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-20 text-center">
+            <h2 class="text-2xl font-bold text-white mb-6">想了解这些能力如何落地到你的业务？</h2>
+            <a href="connect.html" class="inline-flex items-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-full font-bold hover:bg-slate-200 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-white/10">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                与我聊聊 (Let's Talk)
+            </a>
+        </div>
+    </div>
+</body>
+</html>

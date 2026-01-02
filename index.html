@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chase | 超级个体</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f1a',
+                        cardBg: 'rgba(30, 41, 59, 0.5)',
+                        accent: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b0f1a; }
+        .fixed-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: url('images/bg.jpg') no-repeat center center;
+            background-size: cover; opacity: 0.25;
+        }
+        .modal {
+            display: none; position: fixed; z-index: 100;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+        }
+        .modal-content {
+            background-color: #1e293b; margin: 15% auto; padding: 25px;
+            border-radius: 24px; width: 320px; text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body class="text-slate-100 antialiased selection:bg-blue-500/30">
+
+    <div class="fixed-bg"></div>
+
+    <nav class="fixed w-full bg-darkBg/60 backdrop-blur-xl z-40 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <span class="text-xl font-bold tracking-tight">chase <span class="text-blue-500">.</span></span>
+                <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
+                    <a href="index.html" class="hover:text-blue-400 transition-colors">首页</a>
+                    <a href="#projects" class="hover:text-blue-400 transition-colors">核心项目</a>
+                    <a href="connect.html" class="flex items-center gap-2 bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-500 transition-all shadow-lg shadow-blue-500/20">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                        <span>联系我</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20 px-4 text-center max-w-4xl mx-auto">
+        <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl mx-auto mb-10 group relative">
+            <img src="images/avatar.jpg" alt="Leo Avatar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-darkBg/50 to-transparent"></div>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-5 tracking-tight text-white">chase </h1>
+        <p class="text-xl text-slate-400 font-medium mb-10">00年 | ENTJ | AI产品搭建落地 | 强势文化 | 社媒运营</p>
+        <h2 class="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400 py-2">
+            用 AI × 个人系统 重构生产力
+        </h2>
+    </section>
+
+    <section class="py-10 max-w-5xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <a href="connect.html" class="block bg-slate-900/40 backdrop-blur-md p-8 rounded-3xl border border-white/5 hover:border-blue-500/50 hover:bg-slate-800/60 transition-all group">
+                <div class="flex items-center gap-5">
+                    <div class="p-4 bg-blue-500/10 text-blue-400 rounded-2xl group-hover:bg-blue-500 group-hover:text-white transition-all">
+                        <svg class="w-6 h-6 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl text-white">链接我 (Connect)</h3>
+                        <p class="text-slate-400 text-sm mt-1">WeChat / Twitter / 流量实验</p>
+                    </div>
+                    <svg class="w-5 h-5 ml-auto text-slate-600 group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <a href="business.html" class="block bg-slate-900/40 backdrop-blur-md p-8 rounded-3xl border border-white/5 hover:border-purple-500/50 hover:bg-slate-800/60 transition-all group">
+                <div class="flex items-center gap-5">
+                    <div class="p-4 bg-purple-500/10 text-purple-400 rounded-2xl group-hover:bg-purple-500 group-hover:text-white transition-all">
+                        <svg class="w-6 h-6 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl text-white">我的业务 (Business)</h3>
+                        <p class="text-slate-400 text-sm mt-1">AI 咨询 / 增长策略 / 资源合作</p>
+                    </div>
+                    <svg class="w-5 h-5 ml-auto text-slate-600 group-hover:text-purple-400 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <a href="moe.html" class="block bg-slate-900/40 backdrop-blur-md p-8 rounded-3xl border border-white/5 hover:border-emerald-500/50 hover:bg-slate-800/60 transition-all group">
+                <div class="flex items-center gap-5">
+                    <div class="p-4 bg-emerald-500/10 text-emerald-400 rounded-2xl group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                        <svg class="w-6 h-6 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl text-white">我的 MOE (My MOE)</h3>
+                        <p class="text-slate-400 text-sm mt-1">能力架构 / AI 工作流底层逻辑</p>
+                    </div>
+                    <svg class="w-5 h-5 ml-auto text-slate-600 group-hover:text-emerald-400 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+
+            <a href="#" class="block bg-slate-900/40 backdrop-blur-md p-8 rounded-3xl border border-white/5 hover:border-orange-500/50 hover:bg-slate-800/60 transition-all group">
+                <div class="flex items-center gap-5">
+                    <div class="p-4 bg-orange-500/10 text-orange-400 rounded-2xl group-hover:bg-orange-500 group-hover:text-white transition-all">
+                        <svg class="w-6 h-6 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl text-white">我的故事 (Story)</h3>
+                        <p class="text-slate-400 text-sm mt-1">从新能源储能到超级个体</p>
+                    </div>
+                    <svg class="w-5 h-5 ml-auto text-slate-600 group-hover:text-orange-400 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-20 text-white tracking-tight">核心项目 (Selected Works)</h2>
+            <div class="space-y-16">
+                
+                <a href="#" class="block bg-slate-900/30 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-white/5 hover:border-blue-500/30 transition-all group md:flex">
+                    <div class="md:w-2/5 bg-slate-800 min-h-[320px] relative overflow-hidden">
+                        <img src="images/project-x.jpg" alt="X Growth" class="w-full h-full object-cover absolute inset-0 group-hover:scale-110 transition-transform duration-700 opacity-80">
+                    </div>
+                    <div class="p-10 md:p-14 md:w-3/5">
+                        <div class="flex gap-3 mb-6">
+                            <span class="bg-blue-500/10 text-blue-400 text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full border border-blue-500/20">Traffic Growth</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-5 text-white">项目一：BN 流量冷启动实验</h3>
+                        <p class="text-slate-400 leading-relaxed mb-8">在跨境 AI 垂直赛道，通过深度洞察社媒实时热点与高价值信息差，实现 30 天自然增长1000+ 精准粉。</p>
+                        <div class="flex gap-10 border-t border-white/5 pt-8">
+                            <div><div class="text-2xl font-bold text-blue-500">30 Days</div><div class="text-[10px] text-slate-500 uppercase tracking-wider font-bold mt-1">Timeframe</div></div>
+                            <div><div class="text-2xl font-bold text-blue-500">1000+</div><div class="text-[10px] text-slate-500 uppercase tracking-wider font-bold mt-1">Followers</div></div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="block bg-slate-900/30 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-white/5 hover:border-red-500/30 transition-all group md:flex">
+                    <div class="md:w-2/5 bg-slate-800 min-h-[320px] relative overflow-hidden">
+                        <img src="images/project-amazon.jpg" alt="Amazon Sales" class="w-full h-full object-cover absolute inset-0 group-hover:scale-110 transition-transform duration-700 opacity-80">
+                    </div>
+                    <div class="p-10 md:p-14 md:w-3/5">
+                        <div class="flex gap-3 mb-6">
+                            <span class="bg-red-500/10 text-red-400 text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full border border-red-500/20">Visual AI</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-5 text-white">项目二：Listing 图片 AI 自动化重构</h3>
+                        <p class="text-slate-400 leading-relaxed mb-8">针对 1600+ SKU 利用 Midjourney 搭建视觉生成流，实现图片产出 10 倍提效与零成本运营。</p>
+                        <div class="flex gap-10 border-t border-white/5 pt-8">
+                            <div><div class="text-2xl font-bold text-red-500">10x</div><div class="text-[10px] text-slate-500 uppercase tracking-wider font-bold mt-1">Efficiency</div></div>
+                            <div><div class="text-2xl font-bold text-red-500">Low</div><div class="text-[10px] text-slate-500 uppercase tracking-wider font-bold mt-1">Cost Gen</div></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight tracking-tight">
+                正在寻找一位既懂业务又懂技术的 AI 伙伴<br class="hidden md:block"/>欢迎链接，聊聊未来的增长可能性
+            </h2>
+            <div class="flex flex-wrap justify-center gap-5 mt-12">
+                <a href="#" class="flex items-center gap-3 bg-black text-white border border-white/10 px-8 py-4 rounded-full font-bold hover:bg-slate-900 transition-all hover:scale-105 active:scale-95">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                    X 主页
+                </a>
+                <button onclick="showWX()" class="flex items-center gap-3 bg-green-500 text-white px-8 py-4 rounded-full font-bold hover:bg-green-400 transition-all hover:scale-105 active:scale-95">
+                    <svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M8.53 1.95c-3.95 0-7.14 2.87-7.14 6.42 0 1.96 1 3.73 2.59 4.96l-.65 2.19 2.27-1.14c.3.06.6.1.93.1 3.94 0 7.14-2.88 7.14-6.43s-3.2-6.1-7.14-6.1zm-.05 1.7c.45 0 .82.35.82.78 0 .43-.37.78-.82.78-.45 0-.82-.35-.82-.78s.37-.78.82-.78zm-3.1 0c.45 0 .81.35.81.78 0 .43-.36.78-.81.78-.45 0-.82-.35-.82-.78s.37-.78.82-.78zm13.12 4.1c-3.28 0-5.94 2.4-5.94 5.35 0 2.95 2.66 5.35 5.94 5.35.28 0 .54-.03.81-.08l1.89.95-.54-1.83c1.32-1.02 2.16-2.5 2.16-4.14 0-2.95-2.66-5.35-5.94-5.35zm-1.63 1.7c.33 0 .61.26.61.58 0 .32-.28.58-.61.58-.33 0-.61-.26-.61-.58 0-.32.28-.58.61-.58zm2.6 0c.33 0 .61.26.61.58 0 .32-.28.58-.61.58-.34 0-.61-.26-.61-.58 0-.32.27-.58.61-.58z"/></svg>
+                    微信联系
+                </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="wxModal" class="modal" onclick="hideWX()">
+        <div class="modal-content relative" onclick="event.stopPropagation()">
+            <button onclick="hideWX()" class="absolute top-4 right-4 text-slate-500 hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+            </button>
+            <h3 class="font-bold text-xl mb-5 text-white">添加我的微信</h3>
+            <img src="images/wechat_qr.jpg" alt="WeChat QR" class="w-full rounded-2xl mb-5 border border-white/5 shadow-inner">
+            <p class="text-slate-400 text-sm">WeChat ID: <span class="text-white font-mono">cake-oeo</span></p>
+        </div>
+    </div>
+
+    <footer class="py-12 text-center border-t border-white/5">
+        <p class="text-slate-600 text-sm tracking-widest font-medium uppercase">&copy; 2025 chase. Built with Passion & AI.</p>
+    </footer>
+
+    <script>
+        function showWX() { document.getElementById('wxModal').style.display = "block"; document.body.style.overflow = "hidden"; }
+        function hideWX() { document.getElementById('wxModal').style.display = "none"; document.body.style.overflow = "auto"; }
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的业务 | chase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f1a',
+                        cardBg: 'rgba(30, 41, 59, 0.6)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0b0f1a; font-family: 'Inter', sans-serif; color: #f1f5f9; }
+        .fixed-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: url('images/bg.jpg') no-repeat center center; background-size: cover; opacity: 0.2;
+        }
+        .modal {
+            display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.85); backdrop-filter: blur(8px); animation: fadeIn 0.3s ease-out;
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+
+<body class="antialiased min-h-screen flex flex-col items-center relative">
+
+    <div class="fixed-bg"></div>
+
+    <div class="w-full max-w-4xl px-6 py-12 relative z-10">
+        
+        <a href="index.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-10 group text-sm font-medium">
+            <svg class="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            返回首页
+        </a>
+
+        <div class="mb-12">
+            <h1 class="text-4xl font-extrabold text-white mb-3 tracking-tight">我的业务 <span class="text-purple-500">.</span></h1>
+            <p class="text-slate-400 text-lg">提供 AI 落地咨询与高价值数字产品。</p>
+        </div>
+
+        <div class="mb-12">
+            <h2 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">Consulting Service</h2>
+            <button onclick="showWX()" class="w-full relative overflow-hidden bg-gradient-to-r from-slate-900 to-slate-800 border border-purple-500/30 rounded-3xl p-8 text-left hover:scale-[1.01] transition-all group shadow-2xl shadow-purple-900/10">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <svg class="w-32 h-32 text-purple-500 fill-current" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"></path></svg>
+                </div>
+                <div class="relative z-10 md:flex justify-between items-center gap-6">
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-bold rounded-full mb-3">Expert 1 on 1</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">深度业务咨询 / 职业规划</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed max-w-xl">
+                            针对 AI 落地、跨境电商增长策略或产品经理职业路径提供咨询。
+                            <br/>不讲空话，只聊可落地的实战经验。
+                        </p>
+                    </div>
+                    <div class="mt-6 md:mt-0 flex flex-col items-end min-w-[120px]">
+                        <span class="text-3xl font-bold text-white">¥100<span class="text-sm text-slate-500 font-normal">/hour</span></span>
+                        <div class="mt-3 flex items-center gap-2 text-purple-400 text-sm font-bold group-hover:text-purple-300">
+                            预约时间 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <h2 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">Digital Products</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <a href="#" class="block bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-3xl p-6 hover:border-amber-500/50 hover:bg-slate-800/80 transition-all group flex flex-col h-full">
+                <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 mb-4 group-hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72l5 2.73 5-2.73v3.72z"/></svg>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">超级个体成长课程</h3>
+                <p class="text-slate-400 text-xs mb-6 flex-1">从0到1打造个人品牌，掌握知识付费核心方法论，实现商业变现。</p>
+                <div class="flex justify-between items-end border-t border-white/5 pt-4">
+                    <span class="text-xl font-bold text-white">¥199</span>
+                    <span class="text-xs text-amber-500 flex items-center gap-1 bg-amber-500/10 px-2 py-1 rounded">立即购买 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></span>
+                </div>
+            </a>
+
+            <a href="#" class="block bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-3xl p-6 hover:border-blue-500/50 hover:bg-slate-800/80 transition-all group flex flex-col h-full">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500 mb-4 group-hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">知识付费产品打造指南</h3>
+                <p class="text-slate-400 text-xs mb-6 flex-1">从产品定位到内容设计，完整知识付费产品开发流程与实战案例。</p>
+                <div class="flex justify-between items-end border-t border-white/5 pt-4">
+                    <span class="text-xl font-bold text-white">¥299</span>
+                    <span class="text-xs text-blue-500 flex items-center gap-1 bg-blue-500/10 px-2 py-1 rounded">立即购买 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></span>
+                </div>
+            </a>
+
+            <a href="#" class="block bg-slate-900/50 backdrop-blur-md border border-white/5 rounded-3xl p-6 hover:border-emerald-500/50 hover:bg-slate-800/80 transition-all group flex flex-col h-full">
+                <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500 mb-4 group-hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">商业变现实战案例</h3>
+                <p class="text-slate-400 text-xs mb-6 flex-1">真实商业变现案例分析，拆解成功项目的核心逻辑与执行细节。</p>
+                <div class="flex justify-between items-end border-t border-white/5 pt-4">
+                    <span class="text-xl font-bold text-white">¥399</span>
+                    <span class="text-xs text-emerald-500 flex items-center gap-1 bg-emerald-500/10 px-2 py-1 rounded">立即购买 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></span>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="mt-16 text-center">
+            <p class="text-slate-600 text-xs">所有知识产品均支持微信支付，购买后即刻获取完整内容。</p>
+        </div>
+    </div>
+
+    <div id="wxModal" class="modal" onclick="hideWX()">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-[#1e293b] p-8 rounded-[2rem] max-w-sm w-full text-center border border-white/10 shadow-2xl relative" onclick="event.stopPropagation()">
+                <button onclick="hideWX()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-white/10 hover:text-white transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                <div class="mb-6">
+                    <div class="w-16 h-16 bg-purple-500/20 text-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                         <svg class="w-8 h-8 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-2xl text-white">预约咨询服务</h3>
+                    <p class="text-slate-400 text-sm mt-1">添加微信请备注：<span class="text-purple-400">商业咨询</span></p>
+                </div>
+                <div class="bg-white p-2 rounded-xl mb-6">
+                    <img src="images/wechat_qr.jpg" alt="WeChat QR Code" class="w-full rounded-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showWX() { document.getElementById('wxModal').style.display = "block"; document.body.style.overflow = "hidden"; }
+        function hideWX() { document.getElementById('wxModal').style.display = "none"; document.body.style.overflow = "auto"; }
+        document.addEventListener('keydown', function(event) { if (event.key === "Escape") hideWX(); });
+    </script>
+</body>
+</html>
